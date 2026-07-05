@@ -1,0 +1,15 @@
+# ===================================================
+# ❌ DOCKER-COMPOSE KHÔNG AN TOÀN — SECRET BỊ HARDCODE
+# ===================================================
+version: "3.9"
+
+services:
+  webapp:
+    image: webapp:secure
+    container_name: secure-web-demo
+
+    env_file:
+      - .env
+
+    ports:
+      - "3000:3000"
