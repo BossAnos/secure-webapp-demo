@@ -19,6 +19,8 @@ COPY --from=builder --chown=appuser:appgroup /app/package*.json ./
 COPY --from=builder --chown=appuser:appgroup /app/app.js ./
 COPY --from=builder --chown=appuser:appgroup /app/app-secure-config.js ./
 
+ENV APP_ENTRY=app.js
+
 USER appuser:appgroup
 
 EXPOSE 3000
